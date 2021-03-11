@@ -15,6 +15,14 @@ compile-java:
   script: 
     - mvn clean install -DskipTest
 
+compile-abc:
+  image: maven:latest
+  stage: compile
+  script: 
+    - mvn clean install -DskipTest
+  only:
+    - abc
+
 test-java:
   image: maven:latest
   stage: test 
