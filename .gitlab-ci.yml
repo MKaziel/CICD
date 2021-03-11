@@ -19,3 +19,14 @@ test-java:
   stage: test 
   script: 
     - mvn test
+
+compile-javascript:
+  image: node:latest
+  stage: compile
+  script: 
+    - cd jsproject
+    - npm i 
+    - npm build
+
+    
+
