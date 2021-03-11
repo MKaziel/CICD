@@ -35,3 +35,12 @@ test-javascript:
     - cd jsproject
     - npm run test
 
+docker-java: 
+  image: docker:latest
+  stage: dockerize
+  service: 
+    - docker:dind
+  script: 
+    - docker build -t maryo42/demojava:1.0 .
+    - docker push maryo42/demojava:1.0
+
