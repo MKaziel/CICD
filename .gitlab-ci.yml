@@ -6,6 +6,7 @@ cache:
 
 stages: 
   - compile
+  - test
 
 compile-java:
   image: maven:latest
@@ -13,3 +14,8 @@ compile-java:
   script: 
     - mvn clean install -DskipTest
 
+test-java:
+  image: maven:latest
+  stage: test 
+  script: 
+    - mvn test
