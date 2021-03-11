@@ -5,5 +5,9 @@ cache:
     - node_module
 
 
-
+compile-java:
+  image: maven:latest
+  stage: compile
+  script: 
+    - mvn clean install -DskipTest
 
