@@ -24,7 +24,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     id: DM3
     waitFor: ["DM2"]
-    args: ['push', 'mkaziel/eval-cicd']
+    args: ['push', 'mkaziel/eval-cicd-maven']
   # Node block
     # Build Step
   - name: 'node'
