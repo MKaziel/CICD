@@ -1,1 +1,23 @@
-# File Initialisation
+# CI File for Google Cloud Build
+
+steps:
+# Maven block
+  - name: 'maven'
+    id: M1
+    args: ['mvn', 'clean','install', '-DskipTests']
+  - name: 'maven'
+    id: M2
+    args: ['mvn', 'test']
+    waitFor: M1
+  - name: 'gcr.io/cloud-builders/docker'
+    id: DM1
+    waitFor: M2
+    args: ['login', '-u', 'mkaziel', '-p', '462ee77b-5b16-427a-87dd-ec8a5979e32d']
+  - name: 'gcr.io/cloud-builders/docker'
+    id: DM2
+    waitFor: DM1
+    args: ['build', '-t', 'mkaziel/eval-cicd', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    id: DM3
+    waitFor: DM2
+    args: ['push', 'mkaziel/eval-cicd']
