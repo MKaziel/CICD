@@ -38,7 +38,7 @@ test-javascript:
 docker-java: 
   image: docker:latest
   stage: dockerize
-  service: 
+  services: 
     - docker:dind
   script: 
     - docker build -t maryo42/demojava:1.0 .
