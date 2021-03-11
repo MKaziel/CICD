@@ -1,7 +1,6 @@
 # CI File for Google Cloud Build
-
 steps:
-# Maven block
+  # Maven block
   - name: 'maven'
     id: M1
     args: ['mvn', 'clean','install', '-DskipTests']
