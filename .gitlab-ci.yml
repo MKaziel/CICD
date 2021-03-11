@@ -26,7 +26,12 @@ compile-javascript:
   script: 
     - cd jsproject
     - npm i 
-    - npm build
+    - npm run build
 
-    
+test-javascript:
+  image: node:latest
+  stage: test
+  script: 
+    - cd jsproject
+    - npm run test
 
