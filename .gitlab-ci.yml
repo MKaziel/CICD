@@ -1,0 +1,9 @@
+cache:
+  paths:
+    - .m2/repository
+    - target 
+    - node_module
+
+
+
+
