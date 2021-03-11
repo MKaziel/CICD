@@ -4,6 +4,8 @@ cache:
     - target 
     - node_module
 
+stages: 
+  - compile
 
 compile-java:
   image: maven:latest
