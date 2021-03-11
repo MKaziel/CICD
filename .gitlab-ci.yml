@@ -7,6 +7,7 @@ cache:
 stages: 
   - compile
   - test
+  - dockerize
 
 compile-java:
   image: maven:latest
