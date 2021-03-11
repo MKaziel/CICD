@@ -47,3 +47,15 @@ docker-java:
     - docker build -t maryo42/demojava:1.0 .
     - docker push maryo42/demojava:1.0
 
+docker-javascript: 
+  image: docker:latest
+  stage: dockerize
+  services: 
+    - docker:dind
+  before_script:
+    - docker login -u $DOCKERLOGIN -p $DOCKERMDP
+  script: 
+    - cd jsproject
+    - docker build -t maryo42/demojavascript:1.0 .
+    - docker push maryo42/demojavascript:1.0    
+
